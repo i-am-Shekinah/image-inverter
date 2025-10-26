@@ -31,8 +31,10 @@ public class ImageController extends Controller {
 
     /**
      * Endpoint to upload an image, invert its color using Akka, and save it.
+     * <p>
+     * The method extracts the image file from the HTTP request body, processes it asynchronously,
+     * and stores the inverted image on disk.
      *
-     * @param request the HTTP request containing the image file
      * @return success or error message
      */
     @ApiOperation(
@@ -44,7 +46,8 @@ public class ImageController extends Controller {
             @ApiResponse(code = 400, message = "Invalid or missing image file"),
             @ApiResponse(code = 500, message = "Internal server error during processing")
     })
-    public CompletionStage<Result> uploadImage(Http.Request request) {
+    public CompletionStage<Result> uploadImage() {
+        Http.Request request = request();
         Http.MultipartFormData<TemporaryFile> formData = request.body().asMultipartFormData();
         Http.MultipartFormData.FilePart<TemporaryFile> filePart = formData.getFile("image");
 
