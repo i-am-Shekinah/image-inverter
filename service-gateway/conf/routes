@@ -20,5 +20,5 @@ GET            /api-docs                                                       c
 
 
 #image-inverter
-POST           /upload                                                         controllers.ImageController.uploadImage
+POST           /upload                                                         controllers.ImageController.uploadImage()
 GET            /image/:filename                                                controllers.ImageController.getImage(filename: String)
