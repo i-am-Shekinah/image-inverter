@@ -9,7 +9,7 @@ import scala.compat.java8.FutureConverters;
 import java.io.File;
 import java.util.concurrent.CompletionStage;
 
-import tasks.ImageInverterActor;
+import actors.ImageInverterActor;
 
 public class ImageInverterService {
 

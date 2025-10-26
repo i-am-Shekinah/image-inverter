@@ -2,7 +2,7 @@ package modules;
 
 import com.google.inject.AbstractModule;
 import play.libs.akka.AkkaGuiceSupport;
-import tasks.ImageInverterActor;
+import actors.ImageInverterActor;
 
 public class AkkaModule extends AbstractModule implements AkkaGuiceSupport {
     @Override

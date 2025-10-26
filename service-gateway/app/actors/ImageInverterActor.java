@@ -1,4 +1,4 @@
-package tasks;
+package actors;
 
 import akka.actor.AbstractActor;
 import akka.actor.Props;
